@@ -1,0 +1,65 @@
+
+.corpo {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    
+}
+
+.login-title {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    width: 610px;
+    padding: 60px 100px;
+    background-color: #fff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#container > form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3750rem;
+}
+
+.caixinha {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: #e0d8d4;
+}
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.checkbox {
+    float: right;
+}
+
+.actions {
+    text-align: center;
+}
+
+

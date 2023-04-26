@@ -1,0 +1,32 @@
+<div class="background">
+  <div class="content">
+    <div class="between">
+      <h1>Pedidos</h1>
+      <%= form_tag(pedidos_path, method: :get) do %>
+        <%= label_tag "Data inicial:" %>
+        <%= date_field_tag :start_date, params[:start_date] %>
+
+        <%= label_tag "Data final:" %>
+        <%= date_field_tag :end_date , params[:end_date]%>
+        <%= submit_tag "Filtrar pedidos", name: "filter_pedidos" %>
+      <% end %>
+      <button>
+        <%= link_to "Novo pedido", new_pedido_path %>
+      </button>
+    </div>
+
+    <div id="pedidos" class="d-flex flex-column gap-2">
+      <% @pedidos.each do |pedido| %>
+        <div class="card-pedido">
+          <%= render pedido %>
+          <div class="d-flex gap-3">
+            <p>
+              <%= link_to"<button class='outline'>Editar</button>".html_safe, edit_pedido_path(pedido)%>
+              <%= button_to "Excluir", pedido, method: :delete, class: 'delete' %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

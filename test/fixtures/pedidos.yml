@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cliente: MyString
+  tipo_vestidos: 1
+  medidas: 
+  data: 2022-11-15
+
+two:
+  cliente: MyString
+  tipo_vestidos: 1
+  medidas: 
+  data: 2022-11-15

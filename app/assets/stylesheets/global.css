@@ -1,0 +1,127 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+.default-gap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.default-gap-row {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item > a {
+    color: #fff !important;
+}
+
+.sacramento {
+    font-family: 'Sacramento', cursive;
+}
+
+h1 {
+    font-size: 1.75rem !important;
+}
+
+.background {
+    padding-top: 4rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    padding: 1rem;
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+button {
+    background-color: #f1bfb7;
+    font-weight: 400;
+    border-radius: 4px !important;
+    transition: 100ms;
+    padding: 7px 20px;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #f1bfb7 !important;
+}
+
+button:hover:not(.delete) {
+    background-color: #f0dfdc !important;
+}
+
+button.delete:hover {
+    background-color: #eb4d57 !important;
+}
+
+button.outline {
+    background-color: #fff;
+}
+
+button.delete {
+    background-color: #df2d38;
+    border-color: #df2d38;
+    color:#fff;
+}
+
+button > a {
+    color:#000 !important;
+
+}
+
+input, button, select {
+    border: 0;
+}
+
+input:not(.checkbox), select {
+    display: block;
+    width: 100%;
+    border-radius: 0.375rem;
+    border-color: rgb(209 213 219);
+    padding: 0.375rem 1rem;
+    border-width: 1px;
+    background: #fafafa;
+    border-style: solid;
+}
+
+.botoes-login {
+    height: fit-content;
+}
+
+input:focus {
+    border-color: rgb(99 102 241) !important;
+}
+
+.between { 
+    display: flex ;
+    justify-content: space-between;
+}
+
+
+
+/* input, button {
+    border: 0;
+}
+
+input {
+    background-color: #dddddd;
+    border-radius: 4px;
+    transition: 100ms;
+    padding: 8px 12px;
+
+}
+
+input:hover {
+    background-color: #e4e4e4;
+} */

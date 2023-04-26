@@ -1,0 +1,50 @@
+<link href="//db.onlinewebfonts.com/c/f3735d2c9cb3d55c3475459f27fe4900?family=Citadel+Script" rel="stylesheet" type="text/css" />
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <%= stylesheet_link_tag "application" , media: "all"%>
+
+    <title>Document</title>
+</head>
+  <body>
+    <div class="blog">
+      <div class="corpo">
+        <div id="container">
+          <span class="sacramento login-title">Paullina Vestidos</span>
+          <%=form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+              <%=f.label :email %>
+              <br />
+              <%=f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+            <div>
+            <div class="field">
+              <%=f.label :password, "Senha" %>
+              <br />
+              <%=f.password_field :password, autocomplete: "current-password" %>
+            </div>
+            <% if devise_mapping.rememberable? %>
+              <div class="field between">
+                <%=f.label :remember_me, "Lembre-me" %>
+                <%=f.check_box :remember_me, class:"checkbox" %>
+              </div>
+            <% end %>
+            </div >
+            <div class="actions">
+              <%=f.button "Entrar", type: "submit" %>
+            </div>
+          <% end %>
+          <div class="botoes-login d-flex flex-column align-items-center ">
+            <%=render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

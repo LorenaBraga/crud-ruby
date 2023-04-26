@@ -1,0 +1,12 @@
+<div class="background">
+  <div class="content">
+    <h1 class="mx-auto">Novo pedido</h1>
+
+    <div class="mx-auto w-50 card-pedido">
+      <%= render "form", pedido: @pedido %>
+      <button class="outline">
+        <%= link_to "Voltar", pedidos_path %>
+      </button>
+    </div>
+  </div>
+</div>

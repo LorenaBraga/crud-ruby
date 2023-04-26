@@ -1,0 +1,26 @@
+<div id="<%= dom_id pedido %>">
+  <div>
+    <p class="col-items">
+      <strong>Cliente:</strong>
+      <%= pedido.cliente.nome %>
+    </p>
+
+    <p class="col-items">
+      <strong>Descrição do vestido:</strong>
+      <%= pedido.descricao_vestidos %>
+    </p>
+
+    <p class="col-items">
+      <strong>Medidas:</strong>
+      <% pedido.medidas.each do |key, value| %>
+        <%= "#{key.humanize}: #{value}" %>
+        <br>
+      <% end %>
+    </p>
+
+    <p class="col-items">
+      <strong>Data:</strong>
+      <%= pedido.data %>
+    </p>
+  </div>
+</div>

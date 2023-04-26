@@ -1,0 +1,16 @@
+.card-pedido {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    box-shadow: rgb(0 0 0 / 10%) 0px 6px 8px -1px;
+    border: 1px solid #e4e4e481 !important;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.col-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}

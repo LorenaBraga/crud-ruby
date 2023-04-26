@@ -1,0 +1,92 @@
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+</style>
+
+<script>
+  $(document).ready(function() {
+      $("tr").each(function() {
+          let dateString = $(this).find("#dataEntrega").html()
+
+          if (!dateString ) {
+            return
+          }
+
+          var parts = dateString.split('/');
+          var mydate = new Date(parts[2], parts[1] - 1, parts[0]); 
+
+          mydate.setHours(0, 0, 0, 0)
+
+          console.log('data ',  mydate)
+
+          var today = new Date()
+          today.setHours(0, 0, 0, 0)
+
+          if (mydate < today) {
+             $(this).css("background", "red");
+            } else {
+          }
+
+      })
+  })
+</script>
+
+<div class="background">
+  <div class="content">
+    <div class="between">
+      <h1>Relatórios</h1>
+    </div>
+    <div>
+      <%= select_tag :situacaoPedido, [['Hot','hot'],['Medium','medium'],['Cold','cold']] %>
+
+      <div id="pedidos" class="">
+        <table>
+          <tr>
+            <th>Cliente</th>
+            <th>Telefone</th>
+            <th>Data entrega</th>
+            <th>Descrição pedido</th> 
+            <th>Situação</th> 
+          </tr> 
+          <% @pedidos.each do |pedido| %>
+            <tr>
+              <td style="padding: 0 5px"><%= pedido.cliente.nome %></td>
+              <td style="padding: 0 5px"><%= pedido.cliente.telefone %></td>
+              <td id="dataEntrega" style="padding: 0 5px" ><%= pedido.data.strftime("%d/%m/%Y") %></td>
+              <td style="padding: 0 5px" ><%= pedido.descricao_vestidos %></td>
+              <td id="situacao"  style="padding: 0 5px" ><%= if pedido.data < Date.today 
+                                                "Atrasado" 
+                                              else
+                                               "Dentro do Prazo"
+                                              end   %>
+                                              </td>
+
+
+
+<!--              <div class="card-pedido">-->
+                <%#= render pedido %>
+<!--                <div class="d-flex gap-3">-->
+<!--                  <p>-->
+                    <%#= link_to"<button class='outline'>Editar</button>".html_safe, edit_pedido_path(pedido)%>
+                    <%#= button_to "Excluir", pedido, method: :delete, class: 'delete' %>
+<!--                  </p>-->
+<!--                </div>-->
+<!--              </div>-->
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

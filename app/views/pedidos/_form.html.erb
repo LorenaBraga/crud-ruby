@@ -1,0 +1,74 @@
+<%= form_with(model: pedido) do |form| %>
+  <% if pedido.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(pedido.errors.count, "error") %> prohibited this pedido from being saved:</h2>
+
+      <ul>
+        <% pedido.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="">
+    <div class="default-gap">
+      <div>
+      <label>Cliente</label>
+        <%= form.select :cliente_id, options_for_select(Cliente.all.map{|x| [x.nome, x.id]}), :selected => params[:id] %>
+      </div>
+
+      <div>
+        <%= form.label :descrição_vestidos, style: "display: block" %>
+        <%= form.text_field :descricao_vestidos, value: pedido.descricao_vestidos %>
+      </div>
+
+      <div class="field default-gap">
+        <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+        }
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+        </style>
+        <%= form.fields :medidas do |field| %>
+          <div>
+            <%= form.label :comprimento %>
+            <%= field.number_field :comprimento, step: 0.001,  value: pedido.medidas&.[]("comprimento") %>
+          </div>
+          <div>
+            <%= form.label :largura %>
+            <%= field.number_field :largura, step: 0.001,  value: pedido.medidas&.[]("largura")  %>
+          </div>
+          <div>
+            <%= form.label :ombro %>
+            <%= field.number_field :ombro, step: 0.001,  value: pedido.medidas&.[]("ombro") %>
+          </div>
+          <div>
+            <%= form.label :altura_manga %>
+            <%= field.number_field :altura_manga, step: 0.001,  value: pedido.medidas&.[]("altura_manga")  %>
+          </div>
+          <div>
+            <%= form.label :largura_manga %>
+            <%= field.number_field :largura_manga, step: 0.001,  value: pedido.medidas&.[]("largura_manga")  %>
+          </div>
+          <div>
+            <%= form.label :gola %>
+            <%= field.number_field :gola, step: 0.001,  value: pedido.medidas&.[]("gola") %>
+          </div>
+        <% end %>
+      </div>
+
+      <div>
+        <%= form.label :data, style: "display: block" %>
+        <%= form.date_field :data %>
+      </div>
+
+      <div>
+        <%= form.button "Atualizar", type: "submit", class: "w-100" %>
+      </div>
+    </div>
+  </div>
+  
+<% end %>

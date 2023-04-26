@@ -1,0 +1,27 @@
+<div class="background">
+  <div class="content">
+    <div class="between">
+      <h1>Clientes</h1>
+      <%= form_tag(clientes_path, method: :get) do %>
+        <%= label_tag "Nome:" %>
+        <%= text_field_tag :nomeFilter, params[:nomeFilter]%>
+
+        <%= submit_tag "Filtrar Clientes", name: "filter_clientes" %>
+      <% end %>
+      <button>
+        <%= link_to "Novo cliente", new_cliente_path %>
+      </button>
+    </div>
+    
+    <div id="clientes" class="d-flex flex-column gap-2">
+      <% @clientes.each do |cliente| %>
+        <div class="card-pedido">
+          <%= render cliente %>
+          <p>
+            <%= link_to "<button class='outline'>Visualizar cliente</button>".html_safe, cliente %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

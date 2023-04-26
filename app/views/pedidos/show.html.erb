@@ -1,0 +1,11 @@
+<div class="background">
+  <div class="content">
+    <div class="card-pedido">
+      <%= render @pedido %>
+      <div class="default-gap-row">
+        <%= button_to "Editar", edit_pedido_path(@pedido), method: :get , class:"outline"%>
+        <%= button_to "Excluir", @pedido, method: :delete , class:"delete"%>
+      </div>
+    </div>
+  </div>
+</div>
